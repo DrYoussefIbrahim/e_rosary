@@ -1,0 +1,1798 @@
+
+e_rosary.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000b54  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000bc8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000016d  00800060  00800060  00000bc8  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000bc8  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000bf8  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000f8  00000000  00000000  00000c34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000017ef  00000000  00000000  00000d2c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000930  00000000  00000000  0000251b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000c55  00000000  00000000  00002e4b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000234  00000000  00000000  00003aa0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000004ea  00000000  00000000  00003cd4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000cde  00000000  00000000  000041be  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000128  00000000  00000000  00004e9c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	d0 c1       	rjmp	.+928    	; 0x3a2 <__ctors_end>
+   2:	df c1       	rjmp	.+958    	; 0x3c2 <__bad_interrupt>
+   4:	df c1       	rjmp	.+958    	; 0x3c4 <__vector_2>
+   6:	dd c1       	rjmp	.+954    	; 0x3c2 <__bad_interrupt>
+   8:	dc c1       	rjmp	.+952    	; 0x3c2 <__bad_interrupt>
+   a:	f0 c1       	rjmp	.+992    	; 0x3ec <__vector_5>
+   c:	da c1       	rjmp	.+948    	; 0x3c2 <__bad_interrupt>
+   e:	d9 c1       	rjmp	.+946    	; 0x3c2 <__bad_interrupt>
+  10:	d8 c1       	rjmp	.+944    	; 0x3c2 <__bad_interrupt>
+  12:	d7 c1       	rjmp	.+942    	; 0x3c2 <__bad_interrupt>
+  14:	d6 c1       	rjmp	.+940    	; 0x3c2 <__bad_interrupt>
+  16:	d5 c1       	rjmp	.+938    	; 0x3c2 <__bad_interrupt>
+  18:	d4 c1       	rjmp	.+936    	; 0x3c2 <__bad_interrupt>
+  1a:	d3 c1       	rjmp	.+934    	; 0x3c2 <__bad_interrupt>
+  1c:	d2 c1       	rjmp	.+932    	; 0x3c2 <__bad_interrupt>
+
+0000001e <__trampolines_end>:
+	...
+  3a:	00 00       	nop
+  3c:	00 c0       	rjmp	.+0      	; 0x3e <__SP_H__>
+  3e:	80 00       	.word	0x0080	; ????
+  40:	00 70       	andi	r16, 0x00	; 0
+  42:	e0 80       	ld	r14, Z
+	...
+  60:	00 00       	nop
+  62:	00 c0       	rjmp	.+0      	; 0x64 <__SREG__+0x25>
+  64:	80 00       	.word	0x0080	; ????
+  66:	00 70       	andi	r16, 0x00	; 0
+  68:	e0 80       	ld	r14, Z
+  6a:	00 00       	nop
+  6c:	00 00       	nop
+  6e:	00 30       	cpi	r16, 0x00	; 0
+  70:	20 30       	cpi	r18, 0x00	; 0
+  72:	20 30       	cpi	r18, 0x00	; 0
+  74:	00 c0       	rjmp	.+0      	; 0x76 <__SREG__+0x37>
+  76:	80 00       	.word	0x0080	; ????
+  78:	00 70       	andi	r16, 0x00	; 0
+  7a:	e0 80       	ld	r14, Z
+	...
+  90:	80 c0       	rjmp	.+256    	; 0x192 <font+0xc>
+	...
+  9a:	00 f0       	brcs	.+0      	; 0x9c <__SREG__+0x5d>
+  9c:	f8 d8       	rcall	.-3600   	; 0xfffff28e <__eeprom_end+0xff7ef28e>
+  9e:	dc dc       	rcall	.-1608   	; 0xfffffa58 <__eeprom_end+0xff7efa58>
+  a0:	f8 f8       	.word	0xf8f8	; ????
+  a2:	c0 c0       	rjmp	.+384    	; 0x224 <__DATA_REGION_LENGTH__+0x24>
+  a4:	c0 c0       	rjmp	.+384    	; 0x226 <__DATA_REGION_LENGTH__+0x26>
+  a6:	f8 f0       	brcs	.+62     	; 0xe6 <__SREG__+0xa7>
+  a8:	c0 c0       	rjmp	.+384    	; 0x22a <__DATA_REGION_LENGTH__+0x2a>
+  aa:	d8 cc       	rjmp	.-1616   	; 0xfffffa5c <__eeprom_end+0xff7efa5c>
+  ac:	c6 c6       	rjmp	.+3468   	; 0xe3a <_etext+0x2e6>
+  ae:	46 7c       	andi	r20, 0xC6	; 198
+  b0:	38 10       	cpse	r3, r8
+  b2:	00 70       	andi	r16, 0x00	; 0
+  b4:	f0 e0       	ldi	r31, 0x00	; 0
+  b6:	7f 3f       	cpi	r23, 0xFF	; 255
+  b8:	00 00       	nop
+  ba:	7f 3f       	cpi	r23, 0xFF	; 255
+  bc:	00 00       	nop
+  be:	c0 c0       	rjmp	.+384    	; 0x240 <__DATA_REGION_LENGTH__+0x40>
+  c0:	10 38       	cpi	r17, 0x80	; 128
+  c2:	10 00       	.word	0x0010	; ????
+  c4:	30 70       	andi	r19, 0x00	; 0
+  c6:	e0 c0       	rjmp	.+448    	; 0x288 <__stack+0x29>
+  c8:	c0 e0       	ldi	r28, 0x00	; 0
+  ca:	b0 98       	cbi	0x16, 0	; 22
+  cc:	b0 e0       	ldi	r27, 0x00	; 0
+  ce:	c0 c0       	rjmp	.+384    	; 0x250 <__DATA_REGION_LENGTH__+0x50>
+  d0:	d8 cc       	rjmp	.-1616   	; 0xfffffa82 <__eeprom_end+0xff7efa82>
+  d2:	c6 c6       	rjmp	.+3468   	; 0xe60 <_etext+0x30c>
+  d4:	46 7c       	andi	r20, 0xC6	; 198
+  d6:	38 10       	cpse	r3, r8
+  d8:	00 70       	andi	r16, 0x00	; 0
+  da:	f0 e0       	ldi	r31, 0x00	; 0
+  dc:	7f 3f       	cpi	r23, 0xFF	; 255
+  de:	00 00       	nop
+  e0:	7f 3f       	cpi	r23, 0xFF	; 255
+  e2:	00 00       	nop
+  e4:	18 3c       	cpi	r17, 0xC8	; 200
+  e6:	2c 7c       	andi	r18, 0xCC	; 204
+  e8:	e0 e0       	ldi	r30, 0x00	; 0
+  ea:	ff fc       	.word	0xfcff	; ????
+  ec:	f0 7f       	andi	r31, 0xF0	; 240
+  ee:	3f 00       	.word	0x003f	; ????
+  f0:	00 00       	nop
+  f2:	7f 3f       	cpi	r23, 0xFF	; 255
+  f4:	00 00       	nop
+  f6:	f8 fc       	.word	0xfcf8	; ????
+  f8:	6c 6e       	ori	r22, 0xEC	; 236
+  fa:	6e 3c       	cpi	r22, 0xCE	; 206
+  fc:	3c 30       	cpi	r19, 0x0C	; 12
+  fe:	3c 38       	cpi	r19, 0x8C	; 140
+ 100:	30 3c       	cpi	r19, 0xC0	; 192
+ 102:	30 3e       	cpi	r19, 0xE0	; 224
+ 104:	3c b0       	in	r3, 0x0c	; 12
+ 106:	30 38       	cpi	r19, 0x80	; 128
+ 108:	1f 1f       	adc	r17, r31
+	...
+ 112:	00 07       	cpc	r16, r16
+ 114:	0f 00       	.word	0x000f	; ????
+ 116:	00 00       	nop
+ 118:	00 00       	nop
+ 11a:	04 0e       	add	r0, r20
+ 11c:	04 0e       	add	r0, r20
+ 11e:	04 00       	.word	0x0004	; ????
+ 120:	00 00       	nop
+ 122:	00 00       	nop
+ 124:	00 00       	nop
+ 126:	00 08       	sbc	r0, r0
+ 128:	0c 0c       	add	r0, r12
+ 12a:	0c 06       	cpc	r0, r28
+ 12c:	03 01       	movw	r0, r6
+	...
+ 136:	03 0f       	add	r16, r19
+ 138:	0c 1c       	adc	r0, r12
+ 13a:	1c 1c       	adc	r1, r12
+ 13c:	0c 0e       	add	r0, r28
+ 13e:	03 00       	.word	0x0003	; ????
+ 140:	00 00       	nop
+ 142:	00 01       	movw	r0, r0
+ 144:	01 00       	.word	0x0001	; ????
+	...
+ 14e:	08 0c       	add	r0, r8
+ 150:	0c 06       	cpc	r0, r28
+ 152:	03 01       	movw	r0, r6
+	...
+ 16c:	00 00       	nop
+ 16e:	03 07       	cpc	r16, r19
+	...
+ 17c:	01 03       	mulsu	r16, r17
+ 17e:	01 00       	.word	0x0001	; ????
+ 180:	00 00       	nop
+ 182:	00 00       	nop
+	...
+
+00000186 <font>:
+ 186:	00 d8 dc de 0e 0e 0e 0e 0e 0e 06 02 08 0c fe fe     ................
+ 196:	fe 00 00 f7 f7 e3 00 00 00 00 00 00 00 00 00 86     ................
+ 1a6:	f7 f7 f7 00 00 1b 3b 7b 70 70 70 70 70 70 70 70     ......;{pppppppp
+ 1b6:	60 4f 1f 3f 00 00 00 00 00 00 00 00 00 00 00 00     `O.?............
+ 1c6:	00 00 08 0c fe fe fe 00 00 00 00 00 00 00 00 00     ................
+ 1d6:	00 00 00 00 00 86 f7 f7 f7 00 00 00 00 00 00 00     ................
+ 1e6:	00 00 00 00 00 00 00 0f 1f 3f 00 00 00 18 1c 1e     .........?......
+ 1f6:	0e 0e 0e 0e 0e 0e 06 02 08 0c fe fe fe 00 00 f0     ................
+ 206:	f0 e0 08 38 38 38 38 38 38 38 30 06 07 07 07 00     ...88888880.....
+ 216:	00 1b 3b 7b 70 70 70 70 70 70 70 70 60 40 00 00     ..;{pppppppp`@..
+ 226:	00 00 00 18 1c 1e 0e 0e 0e 0e 0e 0e 06 02 08 0c     ................
+ 236:	fe fe fe 00 00 00 00 00 08 38 38 38 38 38 38 38     .........8888888
+ 246:	30 86 f7 f7 f7 00 00 18 38 78 70 70 70 70 70 70     0.......8xpppppp
+ 256:	70 70 60 4f 1f 3f 00 00 00 c0 c0 c0 00 00 00 00     pp`O.?..........
+ 266:	00 00 00 00 08 0c fe fe fe 00 00 07 07 03 08 38     ...............8
+ 276:	38 38 38 38 38 38 30 86 f7 f7 f7 00 00 00 00 00     8888880.........
+	...
+ 28e:	00 0f 1f 3f 00 00 00 d8 dc de 0e 0e 0e 0e 0e 0e     ...?............
+ 29e:	06 02 00 00 00 00 00 00 00 07 07 03 08 38 38 38     .............888
+ 2ae:	38 38 38 38 30 80 f0 f0 f0 00 00 18 38 78 70 70     88880.......8xpp
+ 2be:	70 70 70 70 70 70 60 4f 1f 3f 00 00 00 d8 dc de     pppppp`O.?......
+ 2ce:	0e 0e 0e 0e 0e 0e 06 02 00 00 00 00 00 00 00 f7     ................
+ 2de:	f7 e3 08 38 38 38 38 38 38 38 30 80 f0 f0 f0 00     ...88888880.....
+ 2ee:	00 1b 3b 7b 70 70 70 70 70 70 70 70 60 4f 1f 3f     ..;{pppppppp`O.?
+ 2fe:	00 00 00 18 1c 1e 0e 0e 0e 0e 0e 0e 06 02 08 0c     ................
+ 30e:	fe fe fe 00 00 00 00 00 00 00 00 00 00 00 00 00     ................
+ 31e:	00 86 f7 f7 f7 00 00 00 00 00 00 00 00 00 00 00     ................
+ 32e:	00 00 00 0f 1f 3f 00 00 00 d8 dc de 0e 0e 0e 0e     .....?..........
+ 33e:	0e 0e 06 02 08 0c fe fe fe 00 00 f7 f7 e3 08 38     ...............8
+ 34e:	38 38 38 38 38 38 30 86 f7 f7 f7 00 00 1b 3b 7b     8888880.......;{
+ 35e:	70 70 70 70 70 70 70 70 60 4f 1f 3f 00 00 00 d8     pppppppp`O.?....
+ 36e:	dc de 0e 0e 0e 0e 0e 0e 06 02 08 0c fe fe fe 00     ................
+ 37e:	00 07 07 03 08 38 38 38 38 38 38 38 30 86 f7 f7     .....88888880...
+ 38e:	f7 00 00 18 38 78 70 70 70 70 70 70 70 70 60 4f     ....8xpppppppp`O
+ 39e:	1f 3f 00 00                                         .?..
+
+000003a2 <__ctors_end>:
+ 3a2:	11 24       	eor	r1, r1
+ 3a4:	1f be       	out	0x3f, r1	; 63
+ 3a6:	cf e5       	ldi	r28, 0x5F	; 95
+ 3a8:	d2 e0       	ldi	r29, 0x02	; 2
+ 3aa:	de bf       	out	0x3e, r29	; 62
+ 3ac:	cd bf       	out	0x3d, r28	; 61
+
+000003ae <__do_clear_bss>:
+ 3ae:	21 e0       	ldi	r18, 0x01	; 1
+ 3b0:	a0 e6       	ldi	r26, 0x60	; 96
+ 3b2:	b0 e0       	ldi	r27, 0x00	; 0
+ 3b4:	01 c0       	rjmp	.+2      	; 0x3b8 <.do_clear_bss_start>
+
+000003b6 <.do_clear_bss_loop>:
+ 3b6:	1d 92       	st	X+, r1
+
+000003b8 <.do_clear_bss_start>:
+ 3b8:	ad 3c       	cpi	r26, 0xCD	; 205
+ 3ba:	b2 07       	cpc	r27, r18
+ 3bc:	e1 f7       	brne	.-8      	; 0x3b6 <.do_clear_bss_loop>
+ 3be:	6e d0       	rcall	.+220    	; 0x49c <main>
+ 3c0:	c7 c3       	rjmp	.+1934   	; 0xb50 <_exit>
+
+000003c2 <__bad_interrupt>:
+ 3c2:	1e ce       	rjmp	.-964    	; 0x0 <__vectors>
+
+000003c4 <__vector_2>:
+void io_init();
+void interrupts_init();
+void timers_init();
+void sleep();
+
+ISR(PCINT0_vect){
+ 3c4:	1f 92       	push	r1
+ 3c6:	0f 92       	push	r0
+ 3c8:	0f b6       	in	r0, 0x3f	; 63
+ 3ca:	0f 92       	push	r0
+ 3cc:	11 24       	eor	r1, r1
+ 3ce:	8f 93       	push	r24
+	if(PINB & 1<<BUTTON){
+ 3d0:	b3 9b       	sbis	0x16, 3	; 22
+ 3d2:	06 c0       	rjmp	.+12     	; 0x3e0 <__vector_2+0x1c>
+		PCMSK &= ~(1<<BUTTON);
+ 3d4:	85 b3       	in	r24, 0x15	; 21
+ 3d6:	87 7f       	andi	r24, 0xF7	; 247
+ 3d8:	85 bb       	out	0x15, r24	; 21
+		pressed = 1;	
+ 3da:	81 e0       	ldi	r24, 0x01	; 1
+ 3dc:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <pressed>
+	}
+}
+ 3e0:	8f 91       	pop	r24
+ 3e2:	0f 90       	pop	r0
+ 3e4:	0f be       	out	0x3f, r0	; 63
+ 3e6:	0f 90       	pop	r0
+ 3e8:	1f 90       	pop	r1
+ 3ea:	18 95       	reti
+
+000003ec <__vector_5>:
+
+ISR(TIMER0_OVF_vect){
+ 3ec:	1f 92       	push	r1
+ 3ee:	0f 92       	push	r0
+ 3f0:	0f b6       	in	r0, 0x3f	; 63
+ 3f2:	0f 92       	push	r0
+ 3f4:	11 24       	eor	r1, r1
+ 3f6:	8f 93       	push	r24
+ 3f8:	9f 93       	push	r25
+ 3fa:	af 93       	push	r26
+ 3fc:	bf 93       	push	r27
+	ticks++;
+ 3fe:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 402:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 406:	a0 91 62 00 	lds	r26, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 40a:	b0 91 63 00 	lds	r27, 0x0063	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+ 40e:	01 96       	adiw	r24, 0x01	; 1
+ 410:	a1 1d       	adc	r26, r1
+ 412:	b1 1d       	adc	r27, r1
+ 414:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 418:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 41c:	a0 93 62 00 	sts	0x0062, r26	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 420:	b0 93 63 00 	sts	0x0063, r27	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+}
+ 424:	bf 91       	pop	r27
+ 426:	af 91       	pop	r26
+ 428:	9f 91       	pop	r25
+ 42a:	8f 91       	pop	r24
+ 42c:	0f 90       	pop	r0
+ 42e:	0f be       	out	0x3f, r0	; 63
+ 430:	0f 90       	pop	r0
+ 432:	1f 90       	pop	r1
+ 434:	18 95       	reti
+
+00000436 <interrupts_init>:
+    }
+}
+
+
+void interrupts_init(){
+	GIMSK = 1 << PCIE;
+ 436:	80 e2       	ldi	r24, 0x20	; 32
+ 438:	8b bf       	out	0x3b, r24	; 59
+	PCMSK |= 1 << BUTTON;
+ 43a:	85 b3       	in	r24, 0x15	; 21
+ 43c:	88 60       	ori	r24, 0x08	; 8
+ 43e:	85 bb       	out	0x15, r24	; 21
+	sei(); // Enable global interrupts
+ 440:	78 94       	sei
+ 442:	08 95       	ret
+
+00000444 <timers_init>:
+}
+
+void timers_init(){
+	TCCR0A = 0;
+ 444:	1a bc       	out	0x2a, r1	; 42
+	TCCR0B = 0b00000101;
+ 446:	85 e0       	ldi	r24, 0x05	; 5
+ 448:	83 bf       	out	0x33, r24	; 51
+	TIMSK =  0b00000010;
+ 44a:	82 e0       	ldi	r24, 0x02	; 2
+ 44c:	89 bf       	out	0x39, r24	; 57
+ 44e:	08 95       	ret
+
+00000450 <sleep>:
+}
+
+void sleep() {
+	SSD1312_sendCommand(DISP_OFF);
+ 450:	8e ea       	ldi	r24, 0xAE	; 174
+ 452:	35 d1       	rcall	.+618    	; 0x6be <SSD1312_sendCommand>
+	DDRB = 0;
+ 454:	17 ba       	out	0x17, r1	; 23
+	PORTB = 0;
+ 456:	18 ba       	out	0x18, r1	; 24
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+ 458:	85 b7       	in	r24, 0x35	; 53
+ 45a:	87 7e       	andi	r24, 0xE7	; 231
+ 45c:	80 61       	ori	r24, 0x10	; 16
+ 45e:	85 bf       	out	0x35, r24	; 53
+	cli();
+ 460:	f8 94       	cli
+static __inline void
+__attribute__ ((__always_inline__))
+__power_all_disable()
+{
+#ifdef __AVR_HAVE_PRR
+    PRR |= (uint8_t)(__AVR_HAVE_PRR);
+ 462:	80 b5       	in	r24, 0x20	; 32
+ 464:	8f 60       	ori	r24, 0x0F	; 15
+ 466:	80 bd       	out	0x20, r24	; 32
+	power_all_disable();
+	sleep_enable();
+ 468:	85 b7       	in	r24, 0x35	; 53
+ 46a:	80 62       	ori	r24, 0x20	; 32
+ 46c:	85 bf       	out	0x35, r24	; 53
+	sleep_bod_disable();
+ 46e:	85 b7       	in	r24, 0x35	; 53
+ 470:	84 68       	ori	r24, 0x84	; 132
+ 472:	85 bf       	out	0x35, r24	; 53
+ 474:	8b 7f       	andi	r24, 0xFB	; 251
+ 476:	85 bf       	out	0x35, r24	; 53
+	RESET_BUTTON();
+ 478:	85 b3       	in	r24, 0x15	; 21
+ 47a:	88 60       	ori	r24, 0x08	; 8
+ 47c:	85 bb       	out	0x15, r24	; 21
+ 47e:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <pressed>
+	sei();
+ 482:	78 94       	sei
+	sleep_cpu();
+ 484:	88 95       	sleep
+	sleep_disable();
+ 486:	85 b7       	in	r24, 0x35	; 53
+ 488:	8f 7d       	andi	r24, 0xDF	; 223
+ 48a:	85 bf       	out	0x35, r24	; 53
+static __inline void
+__attribute__ ((__always_inline__))
+__power_all_enable()
+{
+#ifdef __AVR_HAVE_PRR
+    PRR &= (uint8_t)~(__AVR_HAVE_PRR);
+ 48c:	80 b5       	in	r24, 0x20	; 32
+ 48e:	80 7f       	andi	r24, 0xF0	; 240
+ 490:	80 bd       	out	0x20, r24	; 32
+	power_all_enable();
+	i2c_init();
+ 492:	92 d2       	rcall	.+1316   	; 0x9b8 <i2c_init>
+	disp_init();
+ 494:	54 d2       	rcall	.+1192   	; 0x93e <disp_init>
+	SSD1312_sendCommand(DISP_ON);
+ 496:	8f ea       	ldi	r24, 0xAF	; 175
+ 498:	12 d1       	rcall	.+548    	; 0x6be <SSD1312_sendCommand>
+ 49a:	08 95       	ret
+
+0000049c <main>:
+	ticks++;
+}
+
+int main(void)
+{
+	i2c_init();
+ 49c:	8d d2       	rcall	.+1306   	; 0x9b8 <i2c_init>
+	interrupts_init();
+ 49e:	cb df       	rcall	.-106    	; 0x436 <interrupts_init>
+	timers_init();
+ 4a0:	d1 df       	rcall	.-94     	; 0x444 <timers_init>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 4a2:	2f ef       	ldi	r18, 0xFF	; 255
+ 4a4:	89 e6       	ldi	r24, 0x69	; 105
+ 4a6:	98 e1       	ldi	r25, 0x18	; 24
+ 4a8:	21 50       	subi	r18, 0x01	; 1
+ 4aa:	80 40       	sbci	r24, 0x00	; 0
+ 4ac:	90 40       	sbci	r25, 0x00	; 0
+ 4ae:	e1 f7       	brne	.-8      	; 0x4a8 <main+0xc>
+ 4b0:	00 c0       	rjmp	.+0      	; 0x4b2 <main+0x16>
+ 4b2:	00 00       	nop
+	_delay_ms(1000);
+	disp_init();
+ 4b4:	44 d2       	rcall	.+1160   	; 0x93e <disp_init>
+ 4b6:	8f e1       	ldi	r24, 0x1F	; 31
+ 4b8:	9e e4       	ldi	r25, 0x4E	; 78
+ 4ba:	01 97       	sbiw	r24, 0x01	; 1
+ 4bc:	f1 f7       	brne	.-4      	; 0x4ba <main+0x1e>
+ 4be:	00 c0       	rjmp	.+0      	; 0x4c0 <main+0x24>
+ 4c0:	00 00       	nop
+	_delay_ms(10);
+    long count = 0;
+	SSD1312_splash();
+ 4c2:	7f d0       	rcall	.+254    	; 0x5c2 <SSD1312_splash>
+	SSD1312_setRAM();
+ 4c4:	20 d1       	rcall	.+576    	; 0x706 <SSD1312_setRAM>
+ 4c6:	9f ef       	ldi	r25, 0xFF	; 255
+ 4c8:	23 ed       	ldi	r18, 0xD3	; 211
+ 4ca:	80 e3       	ldi	r24, 0x30	; 48
+ 4cc:	91 50       	subi	r25, 0x01	; 1
+ 4ce:	20 40       	sbci	r18, 0x00	; 0
+ 4d0:	80 40       	sbci	r24, 0x00	; 0
+ 4d2:	e1 f7       	brne	.-8      	; 0x4cc <main+0x30>
+ 4d4:	00 c0       	rjmp	.+0      	; 0x4d6 <main+0x3a>
+ 4d6:	00 00       	nop
+	_delay_ms(2000);
+	SSD1312_printNum(count);
+ 4d8:	60 e0       	ldi	r22, 0x00	; 0
+ 4da:	70 e0       	ldi	r23, 0x00	; 0
+ 4dc:	cb 01       	movw	r24, r22
+ 4de:	8a d1       	rcall	.+788    	; 0x7f4 <SSD1312_printNum>
+	interrupts_init();
+	timers_init();
+	_delay_ms(1000);
+	disp_init();
+	_delay_ms(10);
+    long count = 0;
+ 4e0:	c1 2c       	mov	r12, r1
+ 4e2:	d1 2c       	mov	r13, r1
+ 4e4:	76 01       	movw	r14, r12
+	SSD1312_setRAM();
+	_delay_ms(2000);
+	SSD1312_printNum(count);
+    while (1) 
+    {
+		if(pressed == 1){
+ 4e6:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <pressed>
+ 4ea:	81 30       	cpi	r24, 0x01	; 1
+ 4ec:	09 f0       	breq	.+2      	; 0x4f0 <main+0x54>
+ 4ee:	4c c0       	rjmp	.+152    	; 0x588 <main+0xec>
+			ticks = 0;
+ 4f0:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 4f4:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 4f8:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 4fc:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+			if(count == 999999){
+ 500:	9f e3       	ldi	r25, 0x3F	; 63
+ 502:	c9 16       	cp	r12, r25
+ 504:	92 e4       	ldi	r25, 0x42	; 66
+ 506:	d9 06       	cpc	r13, r25
+ 508:	9f e0       	ldi	r25, 0x0F	; 15
+ 50a:	e9 06       	cpc	r14, r25
+ 50c:	f1 04       	cpc	r15, r1
+ 50e:	31 f0       	breq	.+12     	; 0x51c <main+0x80>
+				count = 0;
+			} else {
+				count++;
+ 510:	2f ef       	ldi	r18, 0xFF	; 255
+ 512:	c2 1a       	sub	r12, r18
+ 514:	d2 0a       	sbc	r13, r18
+ 516:	e2 0a       	sbc	r14, r18
+ 518:	f2 0a       	sbc	r15, r18
+ 51a:	03 c0       	rjmp	.+6      	; 0x522 <main+0x86>
+    while (1) 
+    {
+		if(pressed == 1){
+			ticks = 0;
+			if(count == 999999){
+				count = 0;
+ 51c:	c1 2c       	mov	r12, r1
+ 51e:	d1 2c       	mov	r13, r1
+ 520:	76 01       	movw	r14, r12
+			} else {
+				count++;
+			}
+			SSD1312_printNum(count);
+ 522:	c7 01       	movw	r24, r14
+ 524:	b6 01       	movw	r22, r12
+ 526:	66 d1       	rcall	.+716    	; 0x7f4 <SSD1312_printNum>
+ 528:	8f e0       	ldi	r24, 0x0F	; 15
+ 52a:	97 e2       	ldi	r25, 0x27	; 39
+ 52c:	01 97       	sbiw	r24, 0x01	; 1
+ 52e:	f1 f7       	brne	.-4      	; 0x52c <main+0x90>
+ 530:	00 c0       	rjmp	.+0      	; 0x532 <main+0x96>
+ 532:	00 00       	nop
+ 534:	14 c0       	rjmp	.+40     	; 0x55e <main+0xc2>
+			_delay_ms(5);
+			while(PINB & 1<<BUTTON){
+				if(ticks == R_DELAY){
+ 536:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 53a:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 53e:	a0 91 62 00 	lds	r26, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 542:	b0 91 63 00 	lds	r27, 0x0063	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+ 546:	84 36       	cpi	r24, 0x64	; 100
+ 548:	91 05       	cpc	r25, r1
+ 54a:	a1 05       	cpc	r26, r1
+ 54c:	b1 05       	cpc	r27, r1
+ 54e:	39 f4       	brne	.+14     	; 0x55e <main+0xc2>
+					count = 0;
+					SSD1312_printNum(count);
+ 550:	60 e0       	ldi	r22, 0x00	; 0
+ 552:	70 e0       	ldi	r23, 0x00	; 0
+ 554:	cb 01       	movw	r24, r22
+ 556:	4e d1       	rcall	.+668    	; 0x7f4 <SSD1312_printNum>
+			}
+			SSD1312_printNum(count);
+			_delay_ms(5);
+			while(PINB & 1<<BUTTON){
+				if(ticks == R_DELAY){
+					count = 0;
+ 558:	c1 2c       	mov	r12, r1
+ 55a:	d1 2c       	mov	r13, r1
+ 55c:	76 01       	movw	r14, r12
+			} else {
+				count++;
+			}
+			SSD1312_printNum(count);
+			_delay_ms(5);
+			while(PINB & 1<<BUTTON){
+ 55e:	b3 99       	sbic	0x16, 3	; 22
+ 560:	ea cf       	rjmp	.-44     	; 0x536 <main+0x9a>
+ 562:	8f e0       	ldi	r24, 0x0F	; 15
+ 564:	97 e2       	ldi	r25, 0x27	; 39
+ 566:	01 97       	sbiw	r24, 0x01	; 1
+ 568:	f1 f7       	brne	.-4      	; 0x566 <main+0xca>
+ 56a:	00 c0       	rjmp	.+0      	; 0x56c <main+0xd0>
+ 56c:	00 00       	nop
+					count = 0;
+					SSD1312_printNum(count);
+				}
+			}
+			_delay_ms(5);
+			ticks = 0;
+ 56e:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 572:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 576:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 57a:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+			RESET_BUTTON();
+ 57e:	85 b3       	in	r24, 0x15	; 21
+ 580:	88 60       	ori	r24, 0x08	; 8
+ 582:	85 bb       	out	0x15, r24	; 21
+ 584:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <pressed>
+		}
+		
+		if(ticks == S_DELAY){
+ 588:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 58c:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+ 590:	a0 91 62 00 	lds	r26, 0x0062	; 0x800062 <__DATA_REGION_ORIGIN__+0x2>
+ 594:	b0 91 63 00 	lds	r27, 0x0063	; 0x800063 <__DATA_REGION_ORIGIN__+0x3>
+ 598:	8e 35       	cpi	r24, 0x5E	; 94
+ 59a:	91 40       	sbci	r25, 0x01	; 1
+ 59c:	a1 05       	cpc	r26, r1
+ 59e:	b1 05       	cpc	r27, r1
+ 5a0:	09 f0       	breq	.+2      	; 0x5a4 <main+0x108>
+ 5a2:	a1 cf       	rjmp	.-190    	; 0x4e6 <main+0x4a>
+			sleep();
+ 5a4:	55 df       	rcall	.-342    	; 0x450 <sleep>
+ 5a6:	9f cf       	rjmp	.-194    	; 0x4e6 <main+0x4a>
+
+000005a8 <SSD1312_clearBuf>:
+#include "SSD1312.h"
+
+uint8_t DRAM[360];
+
+void SSD1312_clearBuf(){
+	for(uint16_t i=0; i < 360; i++){
+ 5a8:	80 e0       	ldi	r24, 0x00	; 0
+ 5aa:	90 e0       	ldi	r25, 0x00	; 0
+ 5ac:	05 c0       	rjmp	.+10     	; 0x5b8 <SSD1312_clearBuf+0x10>
+		DRAM[i] = 0x00;
+ 5ae:	fc 01       	movw	r30, r24
+ 5b0:	eb 59       	subi	r30, 0x9B	; 155
+ 5b2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5b4:	10 82       	st	Z, r1
+#include "SSD1312.h"
+
+uint8_t DRAM[360];
+
+void SSD1312_clearBuf(){
+	for(uint16_t i=0; i < 360; i++){
+ 5b6:	01 96       	adiw	r24, 0x01	; 1
+ 5b8:	88 36       	cpi	r24, 0x68	; 104
+ 5ba:	21 e0       	ldi	r18, 0x01	; 1
+ 5bc:	92 07       	cpc	r25, r18
+ 5be:	b8 f3       	brcs	.-18     	; 0x5ae <SSD1312_clearBuf+0x6>
+		DRAM[i] = 0x00;
+	}
+}
+ 5c0:	08 95       	ret
+
+000005c2 <SSD1312_splash>:
+
+void SSD1312_splash(){
+	for(uint16_t i=0; i < 360; i++){
+ 5c2:	80 e0       	ldi	r24, 0x00	; 0
+ 5c4:	90 e0       	ldi	r25, 0x00	; 0
+ 5c6:	09 c0       	rjmp	.+18     	; 0x5da <SSD1312_splash+0x18>
+		DRAM[i] = pgm_read_byte(splash + i);
+ 5c8:	fc 01       	movw	r30, r24
+ 5ca:	e2 5e       	subi	r30, 0xE2	; 226
+ 5cc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5ce:	e4 91       	lpm	r30, Z
+ 5d0:	dc 01       	movw	r26, r24
+ 5d2:	ab 59       	subi	r26, 0x9B	; 155
+ 5d4:	bf 4f       	sbci	r27, 0xFF	; 255
+ 5d6:	ec 93       	st	X, r30
+		DRAM[i] = 0x00;
+	}
+}
+
+void SSD1312_splash(){
+	for(uint16_t i=0; i < 360; i++){
+ 5d8:	01 96       	adiw	r24, 0x01	; 1
+ 5da:	88 36       	cpi	r24, 0x68	; 104
+ 5dc:	21 e0       	ldi	r18, 0x01	; 1
+ 5de:	92 07       	cpc	r25, r18
+ 5e0:	98 f3       	brcs	.-26     	; 0x5c8 <SSD1312_splash+0x6>
+		DRAM[i] = pgm_read_byte(splash + i);
+	}
+}
+ 5e2:	08 95       	ret
+
+000005e4 <SSD1312_printDigit>:
+
+void SSD1312_printDigit(uint8_t num, uint8_t pos){
+ 5e4:	ef 92       	push	r14
+ 5e6:	ff 92       	push	r15
+ 5e8:	0f 93       	push	r16
+ 5ea:	1f 93       	push	r17
+ 5ec:	cf 93       	push	r28
+ 5ee:	df 93       	push	r29
+	if(num > 9 || pos > 5){
+ 5f0:	8a 30       	cpi	r24, 0x0A	; 10
+ 5f2:	08 f0       	brcs	.+2      	; 0x5f6 <SSD1312_printDigit+0x12>
+ 5f4:	5d c0       	rjmp	.+186    	; 0x6b0 <SSD1312_printDigit+0xcc>
+ 5f6:	66 30       	cpi	r22, 0x06	; 6
+ 5f8:	08 f0       	brcs	.+2      	; 0x5fc <SSD1312_printDigit+0x18>
+ 5fa:	5a c0       	rjmp	.+180    	; 0x6b0 <SSD1312_printDigit+0xcc>
+		return;
+	}
+	uint16_t ofst = (pos * 18) + frame;
+ 5fc:	70 e0       	ldi	r23, 0x00	; 0
+ 5fe:	eb 01       	movw	r28, r22
+ 600:	cc 0f       	add	r28, r28
+ 602:	dd 1f       	adc	r29, r29
+ 604:	cc 0f       	add	r28, r28
+ 606:	dd 1f       	adc	r29, r29
+ 608:	cc 0f       	add	r28, r28
+ 60a:	dd 1f       	adc	r29, r29
+ 60c:	c6 0f       	add	r28, r22
+ 60e:	d7 1f       	adc	r29, r23
+ 610:	cc 0f       	add	r28, r28
+ 612:	dd 1f       	adc	r29, r29
+ 614:	7e 01       	movw	r14, r28
+ 616:	96 e0       	ldi	r25, 0x06	; 6
+ 618:	e9 0e       	add	r14, r25
+ 61a:	f1 1c       	adc	r15, r1
+	uint16_t fofst = num * 54;
+ 61c:	90 e0       	ldi	r25, 0x00	; 0
+ 61e:	8c 01       	movw	r16, r24
+ 620:	00 0f       	add	r16, r16
+ 622:	11 1f       	adc	r17, r17
+ 624:	80 0f       	add	r24, r16
+ 626:	91 1f       	adc	r25, r17
+ 628:	8c 01       	movw	r16, r24
+ 62a:	00 0f       	add	r16, r16
+ 62c:	11 1f       	adc	r17, r17
+ 62e:	00 0f       	add	r16, r16
+ 630:	11 1f       	adc	r17, r17
+ 632:	00 0f       	add	r16, r16
+ 634:	11 1f       	adc	r17, r17
+ 636:	08 0f       	add	r16, r24
+ 638:	19 1f       	adc	r17, r25
+ 63a:	00 0f       	add	r16, r16
+ 63c:	11 1f       	adc	r17, r17
+	for(uint16_t section = 0; section < 3; section++){
+ 63e:	a0 e0       	ldi	r26, 0x00	; 0
+ 640:	b0 e0       	ldi	r27, 0x00	; 0
+ 642:	33 c0       	rjmp	.+102    	; 0x6aa <SSD1312_printDigit+0xc6>
+		uint16_t memo = section * 120;
+ 644:	bd 01       	movw	r22, r26
+ 646:	62 95       	swap	r22
+ 648:	72 95       	swap	r23
+ 64a:	70 7f       	andi	r23, 0xF0	; 240
+ 64c:	76 27       	eor	r23, r22
+ 64e:	60 7f       	andi	r22, 0xF0	; 240
+ 650:	76 27       	eor	r23, r22
+ 652:	6a 1b       	sub	r22, r26
+ 654:	7b 0b       	sbc	r23, r27
+ 656:	66 0f       	add	r22, r22
+ 658:	77 1f       	adc	r23, r23
+ 65a:	66 0f       	add	r22, r22
+ 65c:	77 1f       	adc	r23, r23
+ 65e:	66 0f       	add	r22, r22
+ 660:	77 1f       	adc	r23, r23
+		uint16_t fmem = section * 18;
+ 662:	ad 01       	movw	r20, r26
+ 664:	44 0f       	add	r20, r20
+ 666:	55 1f       	adc	r21, r21
+ 668:	44 0f       	add	r20, r20
+ 66a:	55 1f       	adc	r21, r21
+ 66c:	44 0f       	add	r20, r20
+ 66e:	55 1f       	adc	r21, r21
+ 670:	4a 0f       	add	r20, r26
+ 672:	5b 1f       	adc	r21, r27
+ 674:	44 0f       	add	r20, r20
+ 676:	55 1f       	adc	r21, r21
+		memo += ofst;
+ 678:	6e 0d       	add	r22, r14
+ 67a:	7f 1d       	adc	r23, r15
+		fmem += fofst;
+ 67c:	40 0f       	add	r20, r16
+ 67e:	51 1f       	adc	r21, r17
+		for(uint16_t i = 0; i < 18; i++){
+ 680:	80 e0       	ldi	r24, 0x00	; 0
+ 682:	90 e0       	ldi	r25, 0x00	; 0
+ 684:	0e c0       	rjmp	.+28     	; 0x6a2 <SSD1312_printDigit+0xbe>
+			DRAM[memo + i] = pgm_read_byte(font + (fmem + i));
+ 686:	9c 01       	movw	r18, r24
+ 688:	26 0f       	add	r18, r22
+ 68a:	37 1f       	adc	r19, r23
+ 68c:	fc 01       	movw	r30, r24
+ 68e:	e4 0f       	add	r30, r20
+ 690:	f5 1f       	adc	r31, r21
+ 692:	ea 57       	subi	r30, 0x7A	; 122
+ 694:	fe 4f       	sbci	r31, 0xFE	; 254
+ 696:	e4 91       	lpm	r30, Z
+ 698:	e9 01       	movw	r28, r18
+ 69a:	cb 59       	subi	r28, 0x9B	; 155
+ 69c:	df 4f       	sbci	r29, 0xFF	; 255
+ 69e:	e8 83       	st	Y, r30
+	for(uint16_t section = 0; section < 3; section++){
+		uint16_t memo = section * 120;
+		uint16_t fmem = section * 18;
+		memo += ofst;
+		fmem += fofst;
+		for(uint16_t i = 0; i < 18; i++){
+ 6a0:	01 96       	adiw	r24, 0x01	; 1
+ 6a2:	82 31       	cpi	r24, 0x12	; 18
+ 6a4:	91 05       	cpc	r25, r1
+ 6a6:	78 f3       	brcs	.-34     	; 0x686 <SSD1312_printDigit+0xa2>
+	if(num > 9 || pos > 5){
+		return;
+	}
+	uint16_t ofst = (pos * 18) + frame;
+	uint16_t fofst = num * 54;
+	for(uint16_t section = 0; section < 3; section++){
+ 6a8:	11 96       	adiw	r26, 0x01	; 1
+ 6aa:	a3 30       	cpi	r26, 0x03	; 3
+ 6ac:	b1 05       	cpc	r27, r1
+ 6ae:	50 f2       	brcs	.-108    	; 0x644 <SSD1312_printDigit+0x60>
+		fmem += fofst;
+		for(uint16_t i = 0; i < 18; i++){
+			DRAM[memo + i] = pgm_read_byte(font + (fmem + i));
+		}
+	}
+}
+ 6b0:	df 91       	pop	r29
+ 6b2:	cf 91       	pop	r28
+ 6b4:	1f 91       	pop	r17
+ 6b6:	0f 91       	pop	r16
+ 6b8:	ff 90       	pop	r15
+ 6ba:	ef 90       	pop	r14
+ 6bc:	08 95       	ret
+
+000006be <SSD1312_sendCommand>:
+	SSD1312_sendCommand(reg);
+	SSD1312_sendCommand(val);
+	return confirmation;
+}
+
+uint8_t SSD1312_sendCommand(uint8_t cmd){
+ 6be:	cf 93       	push	r28
+ 6c0:	c8 2f       	mov	r28, r24
+	uint8_t confirmation = 0;
+	i2c_start();
+ 6c2:	d3 d1       	rcall	.+934    	; 0xa6a <i2c_start>
+	if(i2c_transmitByte(ADDRESS)==1){
+ 6c4:	88 e7       	ldi	r24, 0x78	; 120
+ 6c6:	02 d2       	rcall	.+1028   	; 0xacc <i2c_transmitByte>
+ 6c8:	81 30       	cpi	r24, 0x01	; 1
+ 6ca:	31 f4       	brne	.+12     	; 0x6d8 <SSD1312_sendCommand+0x1a>
+		confirmation = i2c_transmitByte(0x00);
+ 6cc:	80 e0       	ldi	r24, 0x00	; 0
+ 6ce:	fe d1       	rcall	.+1020   	; 0xacc <i2c_transmitByte>
+		confirmation = i2c_transmitByte(cmd);
+ 6d0:	8c 2f       	mov	r24, r28
+ 6d2:	fc d1       	rcall	.+1016   	; 0xacc <i2c_transmitByte>
+ 6d4:	c8 2f       	mov	r28, r24
+ 6d6:	01 c0       	rjmp	.+2      	; 0x6da <SSD1312_sendCommand+0x1c>
+	SSD1312_sendCommand(val);
+	return confirmation;
+}
+
+uint8_t SSD1312_sendCommand(uint8_t cmd){
+	uint8_t confirmation = 0;
+ 6d8:	c0 e0       	ldi	r28, 0x00	; 0
+	i2c_start();
+	if(i2c_transmitByte(ADDRESS)==1){
+		confirmation = i2c_transmitByte(0x00);
+		confirmation = i2c_transmitByte(cmd);
+	}
+	i2c_stop();
+ 6da:	df d1       	rcall	.+958    	; 0xa9a <i2c_stop>
+	
+	return confirmation;
+}
+ 6dc:	8c 2f       	mov	r24, r28
+ 6de:	cf 91       	pop	r28
+ 6e0:	08 95       	ret
+
+000006e2 <SSD1312_setReg>:
+	
+	SSD1312_printDigit(num, 5);
+	SSD1312_setRAM();
+}
+
+uint8_t SSD1312_setReg(uint8_t reg, uint8_t val){
+ 6e2:	cf 93       	push	r28
+ 6e4:	c6 2f       	mov	r28, r22
+	uint8_t confirmation = 0;
+	SSD1312_sendCommand(reg);
+ 6e6:	eb df       	rcall	.-42     	; 0x6be <SSD1312_sendCommand>
+	SSD1312_sendCommand(val);
+ 6e8:	8c 2f       	mov	r24, r28
+ 6ea:	e9 df       	rcall	.-46     	; 0x6be <SSD1312_sendCommand>
+	return confirmation;
+}
+ 6ec:	80 e0       	ldi	r24, 0x00	; 0
+ 6ee:	cf 91       	pop	r28
+ 6f0:	08 95       	ret
+
+000006f2 <SSD1312_sendData>:
+	return confirmation;
+}
+
+uint8_t SSD1312_sendData(){
+	uint8_t confirmation = 0;
+	i2c_start();
+ 6f2:	bb d1       	rcall	.+886    	; 0xa6a <i2c_start>
+	if(i2c_transmitByte(ADDRESS)==1){
+ 6f4:	88 e7       	ldi	r24, 0x78	; 120
+ 6f6:	ea d1       	rcall	.+980    	; 0xacc <i2c_transmitByte>
+ 6f8:	81 30       	cpi	r24, 0x01	; 1
+ 6fa:	19 f4       	brne	.+6      	; 0x702 <SSD1312_sendData+0x10>
+		confirmation = i2c_transmitByte(0 | 1<<6);
+ 6fc:	80 e4       	ldi	r24, 0x40	; 64
+ 6fe:	e6 d1       	rcall	.+972    	; 0xacc <i2c_transmitByte>
+ 700:	08 95       	ret
+	
+	return confirmation;
+}
+
+uint8_t SSD1312_sendData(){
+	uint8_t confirmation = 0;
+ 702:	80 e0       	ldi	r24, 0x00	; 0
+	if(i2c_transmitByte(ADDRESS)==1){
+		confirmation = i2c_transmitByte(0 | 1<<6);
+	}
+	
+	return confirmation;
+}
+ 704:	08 95       	ret
+
+00000706 <SSD1312_setRAM>:
+
+void SSD1312_setRAM(){
+ 706:	1f 93       	push	r17
+ 708:	cf 93       	push	r28
+ 70a:	df 93       	push	r29
+	for(uint8_t page = 0; page < 4; page++){
+ 70c:	10 e0       	ldi	r17, 0x00	; 0
+ 70e:	6b c0       	rjmp	.+214    	; 0x7e6 <SSD1312_setRAM+0xe0>
+		SSD1312_sendCommand(0xB0 | (page+2));
+ 710:	82 e0       	ldi	r24, 0x02	; 2
+ 712:	81 0f       	add	r24, r17
+ 714:	80 6b       	ori	r24, 0xB0	; 176
+ 716:	d3 df       	rcall	.-90     	; 0x6be <SSD1312_sendCommand>
+		SSD1312_sendCommand(0);
+ 718:	80 e0       	ldi	r24, 0x00	; 0
+ 71a:	d1 df       	rcall	.-94     	; 0x6be <SSD1312_sendCommand>
+		SSD1312_sendCommand(0x10);
+ 71c:	80 e1       	ldi	r24, 0x10	; 16
+ 71e:	cf df       	rcall	.-98     	; 0x6be <SSD1312_sendCommand>
+		SSD1312_sendData();
+ 720:	e8 df       	rcall	.-48     	; 0x6f2 <SSD1312_sendData>
+		uint8_t temp = 0;
+		switch(page){
+ 722:	11 30       	cpi	r17, 0x01	; 1
+ 724:	69 f1       	breq	.+90     	; 0x780 <SSD1312_setRAM+0x7a>
+ 726:	80 f0       	brcs	.+32     	; 0x748 <SSD1312_setRAM+0x42>
+ 728:	12 30       	cpi	r17, 0x02	; 2
+ 72a:	09 f4       	brne	.+2      	; 0x72e <SSD1312_setRAM+0x28>
+ 72c:	45 c0       	rjmp	.+138    	; 0x7b8 <SSD1312_setRAM+0xb2>
+ 72e:	13 30       	cpi	r17, 0x03	; 3
+ 730:	09 f4       	brne	.+2      	; 0x734 <SSD1312_setRAM+0x2e>
+ 732:	51 c0       	rjmp	.+162    	; 0x7d6 <SSD1312_setRAM+0xd0>
+ 734:	56 c0       	rjmp	.+172    	; 0x7e2 <SSD1312_setRAM+0xdc>
+			case 0:
+			for(uint16_t s = 0; s < 120; s++){	
+				i2c_transmitByte(DRAM[s] << 4);
+ 736:	fe 01       	movw	r30, r28
+ 738:	eb 59       	subi	r30, 0x9B	; 155
+ 73a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 73c:	80 81       	ld	r24, Z
+ 73e:	82 95       	swap	r24
+ 740:	80 7f       	andi	r24, 0xF0	; 240
+ 742:	c4 d1       	rcall	.+904    	; 0xacc <i2c_transmitByte>
+		SSD1312_sendCommand(0x10);
+		SSD1312_sendData();
+		uint8_t temp = 0;
+		switch(page){
+			case 0:
+			for(uint16_t s = 0; s < 120; s++){	
+ 744:	21 96       	adiw	r28, 0x01	; 1
+ 746:	02 c0       	rjmp	.+4      	; 0x74c <SSD1312_setRAM+0x46>
+		SSD1312_sendCommand(0xB0 | (page+2));
+		SSD1312_sendCommand(0);
+		SSD1312_sendCommand(0x10);
+		SSD1312_sendData();
+		uint8_t temp = 0;
+		switch(page){
+ 748:	c0 e0       	ldi	r28, 0x00	; 0
+ 74a:	d0 e0       	ldi	r29, 0x00	; 0
+			case 0:
+			for(uint16_t s = 0; s < 120; s++){	
+ 74c:	c8 37       	cpi	r28, 0x78	; 120
+ 74e:	d1 05       	cpc	r29, r1
+ 750:	90 f3       	brcs	.-28     	; 0x736 <SSD1312_setRAM+0x30>
+ 752:	47 c0       	rjmp	.+142    	; 0x7e2 <SSD1312_setRAM+0xdc>
+			}
+			break;
+				
+			case 1:
+			for(uint16_t s = 0; s < 120; s++){
+				temp |= (DRAM[s] >> 4) & 0b00001111;
+ 754:	fe 01       	movw	r30, r28
+ 756:	eb 59       	subi	r30, 0x9B	; 155
+ 758:	ff 4f       	sbci	r31, 0xFF	; 255
+ 75a:	20 81       	ld	r18, Z
+ 75c:	22 95       	swap	r18
+ 75e:	2f 70       	andi	r18, 0x0F	; 15
+				temp |= (DRAM[s + 120] << 4) & 0b11110000;
+ 760:	fe 01       	movw	r30, r28
+ 762:	e3 52       	subi	r30, 0x23	; 35
+ 764:	ff 4f       	sbci	r31, 0xFF	; 255
+ 766:	90 81       	ld	r25, Z
+ 768:	89 2f       	mov	r24, r25
+ 76a:	90 e0       	ldi	r25, 0x00	; 0
+ 76c:	82 95       	swap	r24
+ 76e:	92 95       	swap	r25
+ 770:	90 7f       	andi	r25, 0xF0	; 240
+ 772:	98 27       	eor	r25, r24
+ 774:	80 7f       	andi	r24, 0xF0	; 240
+ 776:	98 27       	eor	r25, r24
+				i2c_transmitByte(temp);
+ 778:	82 2b       	or	r24, r18
+ 77a:	a8 d1       	rcall	.+848    	; 0xacc <i2c_transmitByte>
+				i2c_transmitByte(DRAM[s] << 4);
+			}
+			break;
+				
+			case 1:
+			for(uint16_t s = 0; s < 120; s++){
+ 77c:	21 96       	adiw	r28, 0x01	; 1
+ 77e:	02 c0       	rjmp	.+4      	; 0x784 <SSD1312_setRAM+0x7e>
+		SSD1312_sendCommand(0xB0 | (page+2));
+		SSD1312_sendCommand(0);
+		SSD1312_sendCommand(0x10);
+		SSD1312_sendData();
+		uint8_t temp = 0;
+		switch(page){
+ 780:	c0 e0       	ldi	r28, 0x00	; 0
+ 782:	d0 e0       	ldi	r29, 0x00	; 0
+				i2c_transmitByte(DRAM[s] << 4);
+			}
+			break;
+				
+			case 1:
+			for(uint16_t s = 0; s < 120; s++){
+ 784:	c8 37       	cpi	r28, 0x78	; 120
+ 786:	d1 05       	cpc	r29, r1
+ 788:	28 f3       	brcs	.-54     	; 0x754 <SSD1312_setRAM+0x4e>
+ 78a:	2b c0       	rjmp	.+86     	; 0x7e2 <SSD1312_setRAM+0xdc>
+			}
+			break;
+			
+			case 2:
+			for(uint16_t s = 120; s < 240; s++){
+				temp |= (DRAM[s] >> 4) & 0b00001111;
+ 78c:	fe 01       	movw	r30, r28
+ 78e:	eb 59       	subi	r30, 0x9B	; 155
+ 790:	ff 4f       	sbci	r31, 0xFF	; 255
+ 792:	20 81       	ld	r18, Z
+ 794:	22 95       	swap	r18
+ 796:	2f 70       	andi	r18, 0x0F	; 15
+				temp |= (DRAM[s + 120] << 4) & 0b11110000;
+ 798:	fe 01       	movw	r30, r28
+ 79a:	e3 52       	subi	r30, 0x23	; 35
+ 79c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 79e:	90 81       	ld	r25, Z
+ 7a0:	89 2f       	mov	r24, r25
+ 7a2:	90 e0       	ldi	r25, 0x00	; 0
+ 7a4:	82 95       	swap	r24
+ 7a6:	92 95       	swap	r25
+ 7a8:	90 7f       	andi	r25, 0xF0	; 240
+ 7aa:	98 27       	eor	r25, r24
+ 7ac:	80 7f       	andi	r24, 0xF0	; 240
+ 7ae:	98 27       	eor	r25, r24
+				i2c_transmitByte(temp);
+ 7b0:	82 2b       	or	r24, r18
+ 7b2:	8c d1       	rcall	.+792    	; 0xacc <i2c_transmitByte>
+				temp = 0;
+			}
+			break;
+			
+			case 2:
+			for(uint16_t s = 120; s < 240; s++){
+ 7b4:	21 96       	adiw	r28, 0x01	; 1
+ 7b6:	02 c0       	rjmp	.+4      	; 0x7bc <SSD1312_setRAM+0xb6>
+		SSD1312_sendCommand(0xB0 | (page+2));
+		SSD1312_sendCommand(0);
+		SSD1312_sendCommand(0x10);
+		SSD1312_sendData();
+		uint8_t temp = 0;
+		switch(page){
+ 7b8:	c8 e7       	ldi	r28, 0x78	; 120
+ 7ba:	d0 e0       	ldi	r29, 0x00	; 0
+				temp = 0;
+			}
+			break;
+			
+			case 2:
+			for(uint16_t s = 120; s < 240; s++){
+ 7bc:	c0 3f       	cpi	r28, 0xF0	; 240
+ 7be:	d1 05       	cpc	r29, r1
+ 7c0:	28 f3       	brcs	.-54     	; 0x78c <SSD1312_setRAM+0x86>
+ 7c2:	0f c0       	rjmp	.+30     	; 0x7e2 <SSD1312_setRAM+0xdc>
+			}
+			break;
+			
+			case 3:
+			for(uint16_t s = 240; s < 360; s++){
+				i2c_transmitByte(DRAM[s] >> 4);
+ 7c4:	fe 01       	movw	r30, r28
+ 7c6:	eb 59       	subi	r30, 0x9B	; 155
+ 7c8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 7ca:	80 81       	ld	r24, Z
+ 7cc:	82 95       	swap	r24
+ 7ce:	8f 70       	andi	r24, 0x0F	; 15
+ 7d0:	7d d1       	rcall	.+762    	; 0xacc <i2c_transmitByte>
+				temp = 0;
+			}
+			break;
+			
+			case 3:
+			for(uint16_t s = 240; s < 360; s++){
+ 7d2:	21 96       	adiw	r28, 0x01	; 1
+ 7d4:	02 c0       	rjmp	.+4      	; 0x7da <SSD1312_setRAM+0xd4>
+		SSD1312_sendCommand(0xB0 | (page+2));
+		SSD1312_sendCommand(0);
+		SSD1312_sendCommand(0x10);
+		SSD1312_sendData();
+		uint8_t temp = 0;
+		switch(page){
+ 7d6:	c0 ef       	ldi	r28, 0xF0	; 240
+ 7d8:	d0 e0       	ldi	r29, 0x00	; 0
+				temp = 0;
+			}
+			break;
+			
+			case 3:
+			for(uint16_t s = 240; s < 360; s++){
+ 7da:	c8 36       	cpi	r28, 0x68	; 104
+ 7dc:	81 e0       	ldi	r24, 0x01	; 1
+ 7de:	d8 07       	cpc	r29, r24
+ 7e0:	88 f3       	brcs	.-30     	; 0x7c4 <SSD1312_setRAM+0xbe>
+			break;
+			
+			default:
+			break;
+		}
+		i2c_stop();
+ 7e2:	5b d1       	rcall	.+694    	; 0xa9a <i2c_stop>
+	
+	return confirmation;
+}
+
+void SSD1312_setRAM(){
+	for(uint8_t page = 0; page < 4; page++){
+ 7e4:	1f 5f       	subi	r17, 0xFF	; 255
+ 7e6:	14 30       	cpi	r17, 0x04	; 4
+ 7e8:	08 f4       	brcc	.+2      	; 0x7ec <SSD1312_setRAM+0xe6>
+ 7ea:	92 cf       	rjmp	.-220    	; 0x710 <SSD1312_setRAM+0xa>
+			default:
+			break;
+		}
+		i2c_stop();
+	}
+}
+ 7ec:	df 91       	pop	r29
+ 7ee:	cf 91       	pop	r28
+ 7f0:	1f 91       	pop	r17
+ 7f2:	08 95       	ret
+
+000007f4 <SSD1312_printNum>:
+			DRAM[memo + i] = pgm_read_byte(font + (fmem + i));
+		}
+	}
+}
+
+void SSD1312_printNum(long num){
+ 7f4:	cf 92       	push	r12
+ 7f6:	df 92       	push	r13
+ 7f8:	ef 92       	push	r14
+ 7fa:	ff 92       	push	r15
+ 7fc:	0f 93       	push	r16
+ 7fe:	1f 93       	push	r17
+ 800:	cf 93       	push	r28
+ 802:	df 93       	push	r29
+ 804:	6b 01       	movw	r12, r22
+ 806:	7c 01       	movw	r14, r24
+	
+	if(num > 999999){
+ 808:	80 e4       	ldi	r24, 0x40	; 64
+ 80a:	c8 16       	cp	r12, r24
+ 80c:	82 e4       	ldi	r24, 0x42	; 66
+ 80e:	d8 06       	cpc	r13, r24
+ 810:	8f e0       	ldi	r24, 0x0F	; 15
+ 812:	e8 06       	cpc	r14, r24
+ 814:	f1 04       	cpc	r15, r1
+ 816:	0c f0       	brlt	.+2      	; 0x81a <SSD1312_printNum+0x26>
+ 818:	89 c0       	rjmp	.+274    	; 0x92c <SSD1312_printNum+0x138>
+		return;
+	}
+	
+	SSD1312_clearBuf();
+ 81a:	c6 de       	rcall	.-628    	; 0x5a8 <SSD1312_clearBuf>
+	uint8_t started = 0;
+	
+	if(num > 99999){
+ 81c:	90 ea       	ldi	r25, 0xA0	; 160
+ 81e:	c9 16       	cp	r12, r25
+ 820:	96 e8       	ldi	r25, 0x86	; 134
+ 822:	d9 06       	cpc	r13, r25
+ 824:	91 e0       	ldi	r25, 0x01	; 1
+ 826:	e9 06       	cpc	r14, r25
+ 828:	f1 04       	cpc	r15, r1
+ 82a:	a4 f0       	brlt	.+40     	; 0x854 <SSD1312_printNum+0x60>
+		SSD1312_printDigit(num/100000, 0);
+ 82c:	c7 01       	movw	r24, r14
+ 82e:	b6 01       	movw	r22, r12
+ 830:	20 ea       	ldi	r18, 0xA0	; 160
+ 832:	36 e8       	ldi	r19, 0x86	; 134
+ 834:	41 e0       	ldi	r20, 0x01	; 1
+ 836:	50 e0       	ldi	r21, 0x00	; 0
+ 838:	4d d1       	rcall	.+666    	; 0xad4 <__divmodsi4>
+ 83a:	06 2f       	mov	r16, r22
+ 83c:	17 2f       	mov	r17, r23
+ 83e:	d8 2f       	mov	r29, r24
+ 840:	c9 2f       	mov	r28, r25
+ 842:	60 e0       	ldi	r22, 0x00	; 0
+ 844:	82 2f       	mov	r24, r18
+ 846:	ce de       	rcall	.-612    	; 0x5e4 <SSD1312_printDigit>
+		num %= 100000;
+ 848:	c0 2e       	mov	r12, r16
+ 84a:	d1 2e       	mov	r13, r17
+ 84c:	ed 2e       	mov	r14, r29
+ 84e:	fc 2e       	mov	r15, r28
+		started = 1;
+ 850:	81 e0       	ldi	r24, 0x01	; 1
+ 852:	01 c0       	rjmp	.+2      	; 0x856 <SSD1312_printNum+0x62>
+	if(num > 999999){
+		return;
+	}
+	
+	SSD1312_clearBuf();
+	uint8_t started = 0;
+ 854:	80 e0       	ldi	r24, 0x00	; 0
+		SSD1312_printDigit(num/100000, 0);
+		num %= 100000;
+		started = 1;
+	}
+	
+	if(num > 9999 || started==1){
+ 856:	90 e1       	ldi	r25, 0x10	; 16
+ 858:	c9 16       	cp	r12, r25
+ 85a:	97 e2       	ldi	r25, 0x27	; 39
+ 85c:	d9 06       	cpc	r13, r25
+ 85e:	e1 04       	cpc	r14, r1
+ 860:	f1 04       	cpc	r15, r1
+ 862:	14 f4       	brge	.+4      	; 0x868 <SSD1312_printNum+0x74>
+ 864:	81 30       	cpi	r24, 0x01	; 1
+ 866:	99 f4       	brne	.+38     	; 0x88e <SSD1312_printNum+0x9a>
+		SSD1312_printDigit(num/10000, 1);
+ 868:	c7 01       	movw	r24, r14
+ 86a:	b6 01       	movw	r22, r12
+ 86c:	20 e1       	ldi	r18, 0x10	; 16
+ 86e:	37 e2       	ldi	r19, 0x27	; 39
+ 870:	40 e0       	ldi	r20, 0x00	; 0
+ 872:	50 e0       	ldi	r21, 0x00	; 0
+ 874:	2f d1       	rcall	.+606    	; 0xad4 <__divmodsi4>
+ 876:	06 2f       	mov	r16, r22
+ 878:	17 2f       	mov	r17, r23
+ 87a:	d8 2f       	mov	r29, r24
+ 87c:	c9 2f       	mov	r28, r25
+ 87e:	61 e0       	ldi	r22, 0x01	; 1
+ 880:	82 2f       	mov	r24, r18
+ 882:	b0 de       	rcall	.-672    	; 0x5e4 <SSD1312_printDigit>
+		num %= 10000;
+ 884:	c0 2e       	mov	r12, r16
+ 886:	d1 2e       	mov	r13, r17
+ 888:	ed 2e       	mov	r14, r29
+ 88a:	fc 2e       	mov	r15, r28
+		started = 1;
+ 88c:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	
+	if(num > 999 || started==1){
+ 88e:	98 ee       	ldi	r25, 0xE8	; 232
+ 890:	c9 16       	cp	r12, r25
+ 892:	93 e0       	ldi	r25, 0x03	; 3
+ 894:	d9 06       	cpc	r13, r25
+ 896:	e1 04       	cpc	r14, r1
+ 898:	f1 04       	cpc	r15, r1
+ 89a:	14 f4       	brge	.+4      	; 0x8a0 <SSD1312_printNum+0xac>
+ 89c:	81 30       	cpi	r24, 0x01	; 1
+ 89e:	99 f4       	brne	.+38     	; 0x8c6 <SSD1312_printNum+0xd2>
+		SSD1312_printDigit(num/1000, 2);
+ 8a0:	c7 01       	movw	r24, r14
+ 8a2:	b6 01       	movw	r22, r12
+ 8a4:	28 ee       	ldi	r18, 0xE8	; 232
+ 8a6:	33 e0       	ldi	r19, 0x03	; 3
+ 8a8:	40 e0       	ldi	r20, 0x00	; 0
+ 8aa:	50 e0       	ldi	r21, 0x00	; 0
+ 8ac:	13 d1       	rcall	.+550    	; 0xad4 <__divmodsi4>
+ 8ae:	06 2f       	mov	r16, r22
+ 8b0:	17 2f       	mov	r17, r23
+ 8b2:	d8 2f       	mov	r29, r24
+ 8b4:	c9 2f       	mov	r28, r25
+ 8b6:	62 e0       	ldi	r22, 0x02	; 2
+ 8b8:	82 2f       	mov	r24, r18
+ 8ba:	94 de       	rcall	.-728    	; 0x5e4 <SSD1312_printDigit>
+		num %= 1000;
+ 8bc:	c0 2e       	mov	r12, r16
+ 8be:	d1 2e       	mov	r13, r17
+ 8c0:	ed 2e       	mov	r14, r29
+ 8c2:	fc 2e       	mov	r15, r28
+		started = 1;
+ 8c4:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	
+	if(num > 99 || started==1){
+ 8c6:	94 e6       	ldi	r25, 0x64	; 100
+ 8c8:	c9 16       	cp	r12, r25
+ 8ca:	d1 04       	cpc	r13, r1
+ 8cc:	e1 04       	cpc	r14, r1
+ 8ce:	f1 04       	cpc	r15, r1
+ 8d0:	14 f4       	brge	.+4      	; 0x8d6 <SSD1312_printNum+0xe2>
+ 8d2:	81 30       	cpi	r24, 0x01	; 1
+ 8d4:	99 f4       	brne	.+38     	; 0x8fc <SSD1312_printNum+0x108>
+		SSD1312_printDigit(num/100, 3);
+ 8d6:	c7 01       	movw	r24, r14
+ 8d8:	b6 01       	movw	r22, r12
+ 8da:	24 e6       	ldi	r18, 0x64	; 100
+ 8dc:	30 e0       	ldi	r19, 0x00	; 0
+ 8de:	40 e0       	ldi	r20, 0x00	; 0
+ 8e0:	50 e0       	ldi	r21, 0x00	; 0
+ 8e2:	f8 d0       	rcall	.+496    	; 0xad4 <__divmodsi4>
+ 8e4:	06 2f       	mov	r16, r22
+ 8e6:	17 2f       	mov	r17, r23
+ 8e8:	d8 2f       	mov	r29, r24
+ 8ea:	c9 2f       	mov	r28, r25
+ 8ec:	63 e0       	ldi	r22, 0x03	; 3
+ 8ee:	82 2f       	mov	r24, r18
+ 8f0:	79 de       	rcall	.-782    	; 0x5e4 <SSD1312_printDigit>
+		num %= 100;
+ 8f2:	c0 2e       	mov	r12, r16
+ 8f4:	d1 2e       	mov	r13, r17
+ 8f6:	ed 2e       	mov	r14, r29
+ 8f8:	fc 2e       	mov	r15, r28
+		started = 1;
+ 8fa:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	
+	if(num > 9 || started==1){
+ 8fc:	9a e0       	ldi	r25, 0x0A	; 10
+ 8fe:	c9 16       	cp	r12, r25
+ 900:	d1 04       	cpc	r13, r1
+ 902:	e1 04       	cpc	r14, r1
+ 904:	f1 04       	cpc	r15, r1
+ 906:	14 f4       	brge	.+4      	; 0x90c <SSD1312_printNum+0x118>
+ 908:	81 30       	cpi	r24, 0x01	; 1
+ 90a:	61 f4       	brne	.+24     	; 0x924 <SSD1312_printNum+0x130>
+		SSD1312_printDigit(num/10, 4);
+ 90c:	c7 01       	movw	r24, r14
+ 90e:	b6 01       	movw	r22, r12
+ 910:	2a e0       	ldi	r18, 0x0A	; 10
+ 912:	30 e0       	ldi	r19, 0x00	; 0
+ 914:	40 e0       	ldi	r20, 0x00	; 0
+ 916:	50 e0       	ldi	r21, 0x00	; 0
+ 918:	dd d0       	rcall	.+442    	; 0xad4 <__divmodsi4>
+ 91a:	06 2f       	mov	r16, r22
+ 91c:	64 e0       	ldi	r22, 0x04	; 4
+ 91e:	82 2f       	mov	r24, r18
+ 920:	61 de       	rcall	.-830    	; 0x5e4 <SSD1312_printDigit>
+		num %= 10;
+ 922:	c0 2e       	mov	r12, r16
+		started = 1;
+	}
+	
+	SSD1312_printDigit(num, 5);
+ 924:	65 e0       	ldi	r22, 0x05	; 5
+ 926:	8c 2d       	mov	r24, r12
+ 928:	5d de       	rcall	.-838    	; 0x5e4 <SSD1312_printDigit>
+	SSD1312_setRAM();
+ 92a:	ed de       	rcall	.-550    	; 0x706 <SSD1312_setRAM>
+}
+ 92c:	df 91       	pop	r29
+ 92e:	cf 91       	pop	r28
+ 930:	1f 91       	pop	r17
+ 932:	0f 91       	pop	r16
+ 934:	ff 90       	pop	r15
+ 936:	ef 90       	pop	r14
+ 938:	df 90       	pop	r13
+ 93a:	cf 90       	pop	r12
+ 93c:	08 95       	ret
+
+0000093e <disp_init>:
+	}
+}
+
+
+void disp_init(){
+	SSD1312_clearBuf();
+ 93e:	34 de       	rcall	.-920    	; 0x5a8 <SSD1312_clearBuf>
+	PORTB |= (1<<DISP_RESET);
+ 940:	88 b3       	in	r24, 0x18	; 24
+ 942:	80 61       	ori	r24, 0x10	; 16
+ 944:	88 bb       	out	0x18, r24	; 24
+	DDRB |= (1<<DISP_RESET);
+ 946:	87 b3       	in	r24, 0x17	; 23
+ 948:	80 61       	ori	r24, 0x10	; 16
+ 94a:	87 bb       	out	0x17, r24	; 23
+ 94c:	8f e3       	ldi	r24, 0x3F	; 63
+ 94e:	9c e9       	ldi	r25, 0x9C	; 156
+ 950:	01 97       	sbiw	r24, 0x01	; 1
+ 952:	f1 f7       	brne	.-4      	; 0x950 <disp_init+0x12>
+ 954:	00 c0       	rjmp	.+0      	; 0x956 <disp_init+0x18>
+ 956:	00 00       	nop
+	
+	// Display hardware reset
+	_delay_ms(20);
+	PORTB &= ~(1 << DISP_RESET);
+ 958:	88 b3       	in	r24, 0x18	; 24
+ 95a:	8f 7e       	andi	r24, 0xEF	; 239
+ 95c:	88 bb       	out	0x18, r24	; 24
+ 95e:	8f e1       	ldi	r24, 0x1F	; 31
+ 960:	9e e4       	ldi	r25, 0x4E	; 78
+ 962:	01 97       	sbiw	r24, 0x01	; 1
+ 964:	f1 f7       	brne	.-4      	; 0x962 <disp_init+0x24>
+ 966:	00 c0       	rjmp	.+0      	; 0x968 <disp_init+0x2a>
+ 968:	00 00       	nop
+	_delay_ms(10);
+	PORTB |= (1 << DISP_RESET);
+ 96a:	88 b3       	in	r24, 0x18	; 24
+ 96c:	80 61       	ori	r24, 0x10	; 16
+ 96e:	88 bb       	out	0x18, r24	; 24
+ 970:	8f e1       	ldi	r24, 0x1F	; 31
+ 972:	9e e4       	ldi	r25, 0x4E	; 78
+ 974:	01 97       	sbiw	r24, 0x01	; 1
+ 976:	f1 f7       	brne	.-4      	; 0x974 <disp_init+0x36>
+ 978:	00 c0       	rjmp	.+0      	; 0x97a <disp_init+0x3c>
+ 97a:	00 00       	nop
+	_delay_ms(10);
+	
+	// Init sequence
+	SSD1312_sendCommand(DISP_OFF);
+ 97c:	8e ea       	ldi	r24, 0xAE	; 174
+ 97e:	9f de       	rcall	.-706    	; 0x6be <SSD1312_sendCommand>
+	SSD1312_setReg(CDIV, 0xF0);
+ 980:	60 ef       	ldi	r22, 0xF0	; 240
+ 982:	85 ed       	ldi	r24, 0xD5	; 213
+ 984:	ae de       	rcall	.-676    	; 0x6e2 <SSD1312_setReg>
+	SSD1312_setReg(MULPX, 46);
+ 986:	6e e2       	ldi	r22, 0x2E	; 46
+ 988:	88 ea       	ldi	r24, 0xA8	; 168
+ 98a:	ab de       	rcall	.-682    	; 0x6e2 <SSD1312_setReg>
+	SSD1312_setReg(OFFSET, 0);
+ 98c:	60 e0       	ldi	r22, 0x00	; 0
+ 98e:	83 ed       	ldi	r24, 0xD3	; 211
+ 990:	a8 de       	rcall	.-688    	; 0x6e2 <SSD1312_setReg>
+	//SSD1312_sendCommand(0x40|18);
+	//SSD1312_setReg(ADRSSNG, 0x02);
+	SSD1312_sendCommand(0xA1);
+ 992:	81 ea       	ldi	r24, 0xA1	; 161
+ 994:	94 de       	rcall	.-728    	; 0x6be <SSD1312_sendCommand>
+	SSD1312_sendCommand(0xC0);
+ 996:	80 ec       	ldi	r24, 0xC0	; 192
+ 998:	92 de       	rcall	.-732    	; 0x6be <SSD1312_sendCommand>
+	SSD1312_setReg(CONTRAST, 0xFF);
+ 99a:	6f ef       	ldi	r22, 0xFF	; 255
+ 99c:	81 e8       	ldi	r24, 0x81	; 129
+ 99e:	a1 de       	rcall	.-702    	; 0x6e2 <SSD1312_setReg>
+	//SSD1312_setReg(PRECHG, 0x11);
+	SSD1312_setReg(VCOMH, 0x30);
+ 9a0:	60 e3       	ldi	r22, 0x30	; 48
+ 9a2:	8b ed       	ldi	r24, 0xDB	; 219
+ 9a4:	9e de       	rcall	.-708    	; 0x6e2 <SSD1312_setReg>
+	SSD1312_setReg(CHGPUMP, 0x12);
+ 9a6:	62 e1       	ldi	r22, 0x12	; 18
+ 9a8:	8d e8       	ldi	r24, 0x8D	; 141
+ 9aa:	9b de       	rcall	.-714    	; 0x6e2 <SSD1312_setReg>
+	SSD1312_sendCommand(0xA6);
+ 9ac:	86 ea       	ldi	r24, 0xA6	; 166
+ 9ae:	87 de       	rcall	.-754    	; 0x6be <SSD1312_sendCommand>
+	SSD1312_setRAM();
+ 9b0:	aa de       	rcall	.-684    	; 0x706 <SSD1312_setRAM>
+	SSD1312_sendCommand(DISP_ON);
+ 9b2:	8f ea       	ldi	r24, 0xAF	; 175
+ 9b4:	84 de       	rcall	.-760    	; 0x6be <SSD1312_sendCommand>
+ 9b6:	08 95       	ret
+
+000009b8 <i2c_init>:
+#define TIMEOUT 1000
+uint16_t t_count = 0;
+
+void i2c_init()
+{
+	USIDR = 0xFF;
+ 9b8:	8f ef       	ldi	r24, 0xFF	; 255
+ 9ba:	8f b9       	out	0x0f, r24	; 15
+	USICR = (1<<USIWM1)|(1<<USICS1)|(1<<USICLK);		//TWI mode
+ 9bc:	8a e2       	ldi	r24, 0x2A	; 42
+ 9be:	8d b9       	out	0x0d, r24	; 13
+	DDRB |= (1<<PB0)|(1<<PB2);							//SDA & SCL direction as output
+ 9c0:	87 b3       	in	r24, 0x17	; 23
+ 9c2:	85 60       	ori	r24, 0x05	; 5
+ 9c4:	87 bb       	out	0x17, r24	; 23
+	PORTB |= (1<<PB0)|(1<<PB2);							//SDA & SCL default state
+ 9c6:	88 b3       	in	r24, 0x18	; 24
+ 9c8:	85 60       	ori	r24, 0x05	; 5
+ 9ca:	88 bb       	out	0x18, r24	; 24
+ 9cc:	08 95       	ret
+
+000009ce <i2c_ack>:
+}
+
+uint8_t i2c_ack()
+{
+	uint8_t ack_bit = 0;
+	DDRB&=~(1<<PB0);									//Change direction of SDA to receive acknowledge bit
+ 9ce:	87 b3       	in	r24, 0x17	; 23
+ 9d0:	8e 7f       	andi	r24, 0xFE	; 254
+ 9d2:	87 bb       	out	0x17, r24	; 23
+	USISR|=(1<<USICNT3)|(1<<USICNT2)|(1<<USICNT1);		//Set counter to 1110 to force it to overflow when ACK bit is received
+ 9d4:	8e b1       	in	r24, 0x0e	; 14
+ 9d6:	8e 60       	ori	r24, 0x0E	; 14
+ 9d8:	8e b9       	out	0x0e, r24	; 14
+	USICR|=(1<<USITC);		
+ 9da:	8d b1       	in	r24, 0x0d	; 13
+ 9dc:	81 60       	ori	r24, 0x01	; 1
+ 9de:	8d b9       	out	0x0d, r24	; 13
+					//Clock signal from SCL
+	while((PINB&(1<<PB2)));
+ 9e0:	b2 99       	sbic	0x16, 2	; 22
+ 9e2:	fe cf       	rjmp	.-4      	; 0x9e0 <i2c_ack+0x12>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 9e4:	88 e0       	ldi	r24, 0x08	; 8
+ 9e6:	8a 95       	dec	r24
+ 9e8:	f1 f7       	brne	.-4      	; 0x9e6 <i2c_ack+0x18>
+	_delay_us(3);
+	if(~PINB & 1){
+ 9ea:	b0 99       	sbic	0x16, 0	; 22
+ 9ec:	02 c0       	rjmp	.+4      	; 0x9f2 <i2c_ack+0x24>
+		ack_bit = 1;
+ 9ee:	81 e0       	ldi	r24, 0x01	; 1
+ 9f0:	01 c0       	rjmp	.+2      	; 0x9f4 <i2c_ack+0x26>
+		} else {
+		ack_bit = 0;
+ 9f2:	80 e0       	ldi	r24, 0x00	; 0
+ 9f4:	95 e0       	ldi	r25, 0x05	; 5
+ 9f6:	9a 95       	dec	r25
+ 9f8:	f1 f7       	brne	.-4      	; 0x9f6 <i2c_ack+0x28>
+ 9fa:	00 00       	nop
+	}
+	_delay_us(2);
+	USICR|=(1<<USITC);
+ 9fc:	9d b1       	in	r25, 0x0d	; 13
+ 9fe:	91 60       	ori	r25, 0x01	; 1
+ a00:	9d b9       	out	0x0d, r25	; 13
+	while(!(USISR&(1<<USIOIF)));					//Wait for counter to overflow when ack bit is received
+ a02:	76 9b       	sbis	0x0e, 6	; 14
+ a04:	fe cf       	rjmp	.-4      	; 0xa02 <i2c_ack+0x34>
+ a06:	9d e0       	ldi	r25, 0x0D	; 13
+ a08:	9a 95       	dec	r25
+ a0a:	f1 f7       	brne	.-4      	; 0xa08 <i2c_ack+0x3a>
+ a0c:	00 00       	nop
+	_delay_us(5);
+	USISR|=(1<<USIOIF);									//Clear counter overflow flag
+ a0e:	9e b1       	in	r25, 0x0e	; 14
+ a10:	90 64       	ori	r25, 0x40	; 64
+ a12:	9e b9       	out	0x0e, r25	; 14
+	DDRB |= (1<<PB0);									//Change direction of SDA back to output
+ a14:	97 b3       	in	r25, 0x17	; 23
+ a16:	91 60       	ori	r25, 0x01	; 1
+ a18:	97 bb       	out	0x17, r25	; 23
+	
+	return ack_bit;
+}
+ a1a:	08 95       	ret
+
+00000a1c <i2c_transfer>:
+
+void i2c_transfer()
+{
+	if(USIDR & (1<<7)){
+ a1c:	7f 9b       	sbis	0x0f, 7	; 15
+ a1e:	03 c0       	rjmp	.+6      	; 0xa26 <i2c_transfer+0xa>
+		PORTB|=(1<<PB0);
+ a20:	88 b3       	in	r24, 0x18	; 24
+ a22:	81 60       	ori	r24, 0x01	; 1
+ a24:	88 bb       	out	0x18, r24	; 24
+	}
+	do
+	{
+		USICR|=(1<<USITC);								//Clock signal from SCL
+ a26:	8d b1       	in	r24, 0x0d	; 13
+ a28:	81 60       	ori	r24, 0x01	; 1
+ a2a:	8d b9       	out	0x0d, r24	; 13
+		while((PINB&(1<<PB2)));						//Waiting for SCL to go high
+ a2c:	b2 99       	sbic	0x16, 2	; 22
+ a2e:	fe cf       	rjmp	.-4      	; 0xa2c <i2c_transfer+0x10>
+ a30:	8d e0       	ldi	r24, 0x0D	; 13
+ a32:	8a 95       	dec	r24
+ a34:	f1 f7       	brne	.-4      	; 0xa32 <i2c_transfer+0x16>
+ a36:	00 00       	nop
+		_delay_us(5);
+		USICR|=(1<<USITC);
+ a38:	8d b1       	in	r24, 0x0d	; 13
+ a3a:	81 60       	ori	r24, 0x01	; 1
+ a3c:	8d b9       	out	0x0d, r24	; 13
+		if(USIDR & (1<<7)){
+ a3e:	7f 9b       	sbis	0x0f, 7	; 15
+ a40:	03 c0       	rjmp	.+6      	; 0xa48 <i2c_transfer+0x2c>
+			PORTB|=(1<<PB0);
+ a42:	88 b3       	in	r24, 0x18	; 24
+ a44:	81 60       	ori	r24, 0x01	; 1
+ a46:	88 bb       	out	0x18, r24	; 24
+ a48:	8d e0       	ldi	r24, 0x0D	; 13
+ a4a:	8a 95       	dec	r24
+ a4c:	f1 f7       	brne	.-4      	; 0xa4a <i2c_transfer+0x2e>
+ a4e:	00 00       	nop
+		}							//Toggle SCL to go low
+		_delay_us(5);
+	}while(!(USISR&(1<<USIOIF)));						//Repeat clock generation at SCL until the counter overflows and a byte is transferred
+ a50:	76 9b       	sbis	0x0e, 6	; 14
+ a52:	e9 cf       	rjmp	.-46     	; 0xa26 <i2c_transfer+0xa>
+ a54:	8d e0       	ldi	r24, 0x0D	; 13
+ a56:	8a 95       	dec	r24
+ a58:	f1 f7       	brne	.-4      	; 0xa56 <i2c_transfer+0x3a>
+ a5a:	00 00       	nop
+	_delay_us(5);
+	PORTB&=~(1<<PB0);
+ a5c:	88 b3       	in	r24, 0x18	; 24
+ a5e:	8e 7f       	andi	r24, 0xFE	; 254
+ a60:	88 bb       	out	0x18, r24	; 24
+	USISR|=(1<<USIOIF);									//Clear overflow flag
+ a62:	8e b1       	in	r24, 0x0e	; 14
+ a64:	80 64       	ori	r24, 0x40	; 64
+ a66:	8e b9       	out	0x0e, r24	; 14
+ a68:	08 95       	ret
+
+00000a6a <i2c_start>:
+}
+
+void i2c_start()
+{
+	cli();
+ a6a:	f8 94       	cli
+	DDRB |= (1<<PB0)|(1<<PB2);	
+ a6c:	87 b3       	in	r24, 0x17	; 23
+ a6e:	85 60       	ori	r24, 0x05	; 5
+ a70:	87 bb       	out	0x17, r24	; 23
+	PORTB&=~(1<<PB0);									//Pulling SDA line low
+ a72:	88 b3       	in	r24, 0x18	; 24
+ a74:	8e 7f       	andi	r24, 0xFE	; 254
+ a76:	88 bb       	out	0x18, r24	; 24
+ a78:	8d e0       	ldi	r24, 0x0D	; 13
+ a7a:	8a 95       	dec	r24
+ a7c:	f1 f7       	brne	.-4      	; 0xa7a <i2c_start+0x10>
+ a7e:	00 00       	nop
+	_delay_us(5);
+	PORTB&=~(1<<PB2);									//Pulling SCL line low
+ a80:	88 b3       	in	r24, 0x18	; 24
+ a82:	8b 7f       	andi	r24, 0xFB	; 251
+ a84:	88 bb       	out	0x18, r24	; 24
+ a86:	8d e0       	ldi	r24, 0x0D	; 13
+ a88:	8a 95       	dec	r24
+ a8a:	f1 f7       	brne	.-4      	; 0xa88 <i2c_start+0x1e>
+ a8c:	00 00       	nop
+	_delay_us(5);
+	while(!(USISR&(1 << USISIF)));						//detection of start condition
+ a8e:	77 9b       	sbis	0x0e, 7	; 14
+ a90:	fe cf       	rjmp	.-4      	; 0xa8e <i2c_start+0x24>
+	USISR |= (1 << USISIF);
+ a92:	8e b1       	in	r24, 0x0e	; 14
+ a94:	80 68       	ori	r24, 0x80	; 128
+ a96:	8e b9       	out	0x0e, r24	; 14
+ a98:	08 95       	ret
+
+00000a9a <i2c_stop>:
+}
+
+
+void i2c_stop()
+{
+	USIDR = 0xFF;
+ a9a:	8f ef       	ldi	r24, 0xFF	; 255
+ a9c:	8f b9       	out	0x0f, r24	; 15
+	PORTB|=(1<<PB2);									//Pulling SDA high
+ a9e:	88 b3       	in	r24, 0x18	; 24
+ aa0:	84 60       	ori	r24, 0x04	; 4
+ aa2:	88 bb       	out	0x18, r24	; 24
+ aa4:	8d e0       	ldi	r24, 0x0D	; 13
+ aa6:	8a 95       	dec	r24
+ aa8:	f1 f7       	brne	.-4      	; 0xaa6 <i2c_stop+0xc>
+ aaa:	00 00       	nop
+	_delay_us(5);
+	PORTB|=(1<<PB0);									//Pulling SCL low
+ aac:	88 b3       	in	r24, 0x18	; 24
+ aae:	81 60       	ori	r24, 0x01	; 1
+ ab0:	88 bb       	out	0x18, r24	; 24
+ ab2:	8d e0       	ldi	r24, 0x0D	; 13
+ ab4:	8a 95       	dec	r24
+ ab6:	f1 f7       	brne	.-4      	; 0xab4 <i2c_stop+0x1a>
+ ab8:	00 00       	nop
+	_delay_us(5);
+	while(!(USISR&(1 << USIPF)));									//detection of stop condition
+ aba:	75 9b       	sbis	0x0e, 5	; 14
+ abc:	fe cf       	rjmp	.-4      	; 0xaba <i2c_stop+0x20>
+	USISR |= (1 << USIPF);
+ abe:	8e b1       	in	r24, 0x0e	; 14
+ ac0:	80 62       	ori	r24, 0x20	; 32
+ ac2:	8e b9       	out	0x0e, r24	; 14
+	sei();
+ ac4:	78 94       	sei
+ ac6:	08 95       	ret
+
+00000ac8 <i2c_loadData>:
+}
+
+void i2c_loadData(uint8_t data)
+{
+	USIDR = data;										//Load data to be sent to the USI data register
+ ac8:	8f b9       	out	0x0f, r24	; 15
+ aca:	08 95       	ret
+
+00000acc <i2c_transmitByte>:
+}
+
+uint8_t i2c_transmitByte(uint8_t byt)
+{
+	uint8_t ack_bit = 0;
+	i2c_loadData(byt);
+ acc:	fd df       	rcall	.-6      	; 0xac8 <i2c_loadData>
+	i2c_transfer();
+ ace:	a6 df       	rcall	.-180    	; 0xa1c <i2c_transfer>
+	ack_bit = i2c_ack();
+ ad0:	7e df       	rcall	.-260    	; 0x9ce <i2c_ack>
+	
+	return ack_bit;
+ ad2:	08 95       	ret
+
+00000ad4 <__divmodsi4>:
+ ad4:	05 2e       	mov	r0, r21
+ ad6:	97 fb       	bst	r25, 7
+ ad8:	16 f4       	brtc	.+4      	; 0xade <__divmodsi4+0xa>
+ ada:	00 94       	com	r0
+ adc:	0f d0       	rcall	.+30     	; 0xafc <__negsi2>
+ ade:	57 fd       	sbrc	r21, 7
+ ae0:	05 d0       	rcall	.+10     	; 0xaec <__divmodsi4_neg2>
+ ae2:	14 d0       	rcall	.+40     	; 0xb0c <__udivmodsi4>
+ ae4:	07 fc       	sbrc	r0, 7
+ ae6:	02 d0       	rcall	.+4      	; 0xaec <__divmodsi4_neg2>
+ ae8:	46 f4       	brtc	.+16     	; 0xafa <__divmodsi4_exit>
+ aea:	08 c0       	rjmp	.+16     	; 0xafc <__negsi2>
+
+00000aec <__divmodsi4_neg2>:
+ aec:	50 95       	com	r21
+ aee:	40 95       	com	r20
+ af0:	30 95       	com	r19
+ af2:	21 95       	neg	r18
+ af4:	3f 4f       	sbci	r19, 0xFF	; 255
+ af6:	4f 4f       	sbci	r20, 0xFF	; 255
+ af8:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000afa <__divmodsi4_exit>:
+ afa:	08 95       	ret
+
+00000afc <__negsi2>:
+ afc:	90 95       	com	r25
+ afe:	80 95       	com	r24
+ b00:	70 95       	com	r23
+ b02:	61 95       	neg	r22
+ b04:	7f 4f       	sbci	r23, 0xFF	; 255
+ b06:	8f 4f       	sbci	r24, 0xFF	; 255
+ b08:	9f 4f       	sbci	r25, 0xFF	; 255
+ b0a:	08 95       	ret
+
+00000b0c <__udivmodsi4>:
+ b0c:	a1 e2       	ldi	r26, 0x21	; 33
+ b0e:	1a 2e       	mov	r1, r26
+ b10:	aa 1b       	sub	r26, r26
+ b12:	bb 1b       	sub	r27, r27
+ b14:	fd 01       	movw	r30, r26
+ b16:	0d c0       	rjmp	.+26     	; 0xb32 <__udivmodsi4_ep>
+
+00000b18 <__udivmodsi4_loop>:
+ b18:	aa 1f       	adc	r26, r26
+ b1a:	bb 1f       	adc	r27, r27
+ b1c:	ee 1f       	adc	r30, r30
+ b1e:	ff 1f       	adc	r31, r31
+ b20:	a2 17       	cp	r26, r18
+ b22:	b3 07       	cpc	r27, r19
+ b24:	e4 07       	cpc	r30, r20
+ b26:	f5 07       	cpc	r31, r21
+ b28:	20 f0       	brcs	.+8      	; 0xb32 <__udivmodsi4_ep>
+ b2a:	a2 1b       	sub	r26, r18
+ b2c:	b3 0b       	sbc	r27, r19
+ b2e:	e4 0b       	sbc	r30, r20
+ b30:	f5 0b       	sbc	r31, r21
+
+00000b32 <__udivmodsi4_ep>:
+ b32:	66 1f       	adc	r22, r22
+ b34:	77 1f       	adc	r23, r23
+ b36:	88 1f       	adc	r24, r24
+ b38:	99 1f       	adc	r25, r25
+ b3a:	1a 94       	dec	r1
+ b3c:	69 f7       	brne	.-38     	; 0xb18 <__udivmodsi4_loop>
+ b3e:	60 95       	com	r22
+ b40:	70 95       	com	r23
+ b42:	80 95       	com	r24
+ b44:	90 95       	com	r25
+ b46:	9b 01       	movw	r18, r22
+ b48:	ac 01       	movw	r20, r24
+ b4a:	bd 01       	movw	r22, r26
+ b4c:	cf 01       	movw	r24, r30
+ b4e:	08 95       	ret
+
+00000b50 <_exit>:
+ b50:	f8 94       	cli
+
+00000b52 <__stop_program>:
+ b52:	ff cf       	rjmp	.-2      	; 0xb52 <__stop_program>
